@@ -1,24 +1,56 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import Grid from './Helpers/Grid';
+import Header from './Header';
+import SideBar from './SideBar';
+import Content from './Content';
+import Footer from './Footer';
 
 class App extends Component {
-    state = {users: []}
-
-    componentDidMount() {
-        fetch('/users')
-            .then(res => res.json())
-    .then(users => this.setState({ users }));
-    }
-
     render() {
         return (
-            <div className="App">
-            <h1>Users</h1>
-        {this.state.users.map(user =>
-        <div key={user.id}>{user.username}</div>
-        )}
-    </div>
-    );
+            <Grid rows='150px auto 50px'
+                  columns='1fr 4fr'
+                  style={{height: '100vh', width: '100vw'}}
+            >
+
+                {/* Content */}
+                <Grid row={2}
+                      height={1}
+                      column={2}
+                      width={1}
+                >
+                    <Content/>
+                </Grid>
+
+                {/* SideBar */}
+                <Grid row={2}
+                      height={1}
+                      column={1}
+                      width={1}
+                >
+                    <SideBar/>
+                </Grid>
+
+                {/* Header */}
+                <Grid row={1}
+                      height={1}
+                      column={1}
+                      width={2}
+                >
+                    <Header/>
+                </Grid>
+
+                {/* Footer */}
+                <Grid row={3}
+                      height={1}
+                      column={1}
+                      width={2}
+                >
+                    <Footer/>
+                </Grid>
+            </Grid>
+        );
     }
 }
 
