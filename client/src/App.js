@@ -19,6 +19,8 @@ class App extends Component {
                       height={1}
                       column={2}
                       width={1}
+                      rows='repeat(4 1fr)'
+                      columns='repeat(4 1fr)'
                 >
                     <Content/>
                 </Grid>

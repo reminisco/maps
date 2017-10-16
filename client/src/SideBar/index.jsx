@@ -12,8 +12,11 @@ class Index extends Component {
 
     render() {
         return (
-            <h1>Side Bar</h1>
-        );
+            <div className="sidebar">
+                <h1>Side Bar</h1>
+            </div>
+
+    );
     }
 }
 
