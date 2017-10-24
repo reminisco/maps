@@ -1,22 +1,25 @@
 import React, {Component} from 'react';
 import './index.css';
+import {NavLink} from 'react-router-dom'
 
 class Index extends Component {
-    state = {users: []}
-
-    componentDidMount() {
-        fetch('/users')
-            .then(res => res.json())
-            .then(users => this.setState({users}));
-    }
 
     render() {
         return (
             <div className="sidebar">
-                <h1>Side Bar</h1>
+                <nav>
+                    <button>
+                        <NavLink to="/all-maps">View All Maps</NavLink>
+                    </button>
+                    <button>
+                        <NavLink to="/available-maps">View Available Maps</NavLink>
+                    </button>
+                    <button>
+                        <NavLink to="/assigned-maps">View Assigned Maps</NavLink>
+                    </button>
+                </nav>
             </div>
-
-    );
+        );
     }
 }
 

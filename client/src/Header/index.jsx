@@ -12,7 +12,10 @@ class Index extends Component {
 
     render() {
         return (
-            <h1>Header</h1>
+            <div>
+                <h1>JW Territory Map System</h1>
+                <h3>Burnham-on-sea</h3>
+            </div>
         );
     }
 }

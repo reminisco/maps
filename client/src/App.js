@@ -6,10 +6,11 @@ import SideBar from './SideBar';
 import Content from './Content';
 import Footer from './Footer';
 
+
 class App extends Component {
     render() {
         return (
-            <Grid rows='150px auto 50px'
+            <Grid rows='100px auto 50px'
                   columns='1fr 4fr'
                   style={{height: '100vh', width: '100vw'}}
             >
