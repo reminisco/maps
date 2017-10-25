@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import './index.css';
 import BottomNavigation, {BottomNavigationButton} from 'material-ui/BottomNavigation';
-import RestoreIcon from 'material-ui-icons/Restore';
-import FavoriteIcon from 'material-ui-icons/Favorite';
+import ViewModule from 'material-ui-icons/ViewModule';
+import InsertPhoto from 'material-ui-icons/InsertPhoto';
 import LocationOnIcon from 'material-ui-icons/LocationOn';
+import {Link} from 'react-router-dom';
 
 const styles = {
     position: "fixed",
@@ -30,9 +31,24 @@ class Footer extends Component {
                     onChange={this.handleChange}
                     showLabels
                 >
-                    <BottomNavigationButton label="Recents" icon={<RestoreIcon/>}/>
-                    <BottomNavigationButton label="Favorites" icon={<FavoriteIcon/>}/>
-                    <BottomNavigationButton label="Nearby" icon={<LocationOnIcon/>}/>
+                    <BottomNavigationButton
+                        label="All Maps"
+                        icon={<ViewModule/>}
+                        component={Link}
+                        to="/all-maps"
+                    />
+                    <BottomNavigationButton
+                        label="Request Maps"
+                        icon={<InsertPhoto/>}
+                        component={Link}
+                        to="/request-a-map"
+                    />
+                    <BottomNavigationButton
+                        label="My Maps"
+                        icon={<LocationOnIcon/>}
+                        component={Link}
+                        to="/my-maps"
+                    />
                 </BottomNavigation>
             </div>
         );

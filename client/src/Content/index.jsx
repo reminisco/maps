@@ -1,31 +1,17 @@
 import React, {Component} from 'react';
 import './index.css';
-import Grid from '../Helpers/Grid';
-import { Route } from 'react-router-dom';
-import Header from '../Header';
-
-function Cont() {
-    return (
-        <div>
-            Hello
-        </div>
-    );
-}
+import {Route} from 'react-router-dom';
+import MyMaps from './Pages/MyMaps';
+import AllMaps from './Pages/AllMaps';
+import RequestMap from './Pages/RequestMap';
 
 class Index extends Component {
-    state = {users: []}
-
-    // componentDidMount() {
-    //     fetch('/users')
-    //         .then(res => res.json())
-    //         .then(users => this.setState({users}));
-    // }
-
     render() {
         return (
-            <div>
-                <Route path="/test" component={Header} />
-                <Route path="/" component={Cont} />
+            <div style={{height: "100%"}}>
+                <Route path="/all-maps" component={AllMaps}/>
+                <Route path="/my-maps" component={MyMaps}/>
+                <Route path="/request-a-map" component={RequestMap}/>
             </div>
         );
     }
