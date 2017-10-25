@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './index.css';
 import BottomNavigation, {BottomNavigationButton} from 'material-ui/BottomNavigation';
 import ViewModule from 'material-ui-icons/ViewModule';
 import InsertPhoto from 'material-ui-icons/InsertPhoto';

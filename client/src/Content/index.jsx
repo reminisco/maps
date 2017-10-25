@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './index.css';
 import {Route} from 'react-router-dom';
 import MyMaps from './Pages/MyMaps';
 import AllMaps from './Pages/AllMaps';
