@@ -1,20 +1,29 @@
-import React, {Component} from 'react';
-import './index.css';
+import React from 'react';
+import {withStyles} from 'material-ui/styles';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 
-class Index extends Component {
-    state = {users: []}
+const styles = theme => ({
+    root: {
+        // marginTop: theme.spacing.unit * 3,
+        width: '100%',
+    },
+});
 
-    componentDidMount() {
-        fetch('/users')
-            .then(res => res.json())
-            .then(users => this.setState({users}));
-    }
-
-    render() {
-        return (
-            <h1>Header</h1>
-        );
-    }
+function Header(props) {
+    const {classes} = props;
+    return (
+        <div className={classes.root}>
+            <AppBar position="static" color="default">
+                <Toolbar>
+                    <Typography type="title" color="inherit">
+                        JW Maps System
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+        </div>
+    );
 }
 
-export default Index;
+export default withStyles(styles)(Header);
