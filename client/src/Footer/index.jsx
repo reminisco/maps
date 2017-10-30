@@ -4,11 +4,14 @@ import ViewModule from 'material-ui-icons/ViewModule';
 import InsertPhoto from 'material-ui-icons/InsertPhoto';
 import LocationOnIcon from 'material-ui-icons/LocationOn';
 import {Link} from 'react-router-dom';
+import {withStyles} from 'material-ui/styles';
 
 const styles = {
-    position: "fixed",
-    bottom: "0",
-    width: "100%",
+    root: {
+        position: "fixed",
+        bottom: "0",
+        width: "100%",
+    }
 };
 
 class Footer extends Component {
@@ -21,37 +24,37 @@ class Footer extends Component {
     };
 
     render() {
+        const {classes} = this.props;
         const {value} = this.state;
 
         return (
-            <div style={styles}>
-                <BottomNavigation
-                    value={value}
-                    onChange={this.handleChange}
-                    showLabels
-                >
-                    <BottomNavigationButton
-                        label="All Maps"
-                        icon={<ViewModule/>}
-                        component={Link}
-                        to="/all-maps"
-                    />
-                    <BottomNavigationButton
-                        label="Request Maps"
-                        icon={<InsertPhoto/>}
-                        component={Link}
-                        to="/request-a-map"
-                    />
-                    <BottomNavigationButton
-                        label="My Maps"
-                        icon={<LocationOnIcon/>}
-                        component={Link}
-                        to="/my-maps"
-                    />
-                </BottomNavigation>
-            </div>
+            <BottomNavigation
+                value={value}
+                onChange={this.handleChange}
+                showLabels
+                className={classes.root}
+            >
+                <BottomNavigationButton
+                    label="All Maps"
+                    icon={<ViewModule/>}
+                    component={Link}
+                    to="/all-maps"
+                />
+                <BottomNavigationButton
+                    label="Request Maps"
+                    icon={<InsertPhoto/>}
+                    component={Link}
+                    to="/request-a-map"
+                />
+                <BottomNavigationButton
+                    label="My Maps"
+                    icon={<LocationOnIcon/>}
+                    component={Link}
+                    to="/my-maps"
+                />
+            </BottomNavigation>
         );
     }
 }
 
-export default Footer;
+export default withStyles(styles)(Footer);
